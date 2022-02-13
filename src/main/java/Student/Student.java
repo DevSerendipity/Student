@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Student {
 
-    private final String name;
-    private final Map<String,Integer> scores;
+    private String name;
+    private Map<String,Integer> scores;
     private final double studentAverageScore;
     private final double grade;
 
@@ -28,8 +28,16 @@ public class Student {
         return name;
     }
 
+    protected void setName(String name){
+        this.name = name;
+    }
+
     protected Map<String, Integer> getAllScores() {
         return new HashMap<>(scores);
+    }
+
+    protected void setScores(Map<String,Integer> scores){
+        this.scores = scores;
     }
 
     protected double getGrade() {
