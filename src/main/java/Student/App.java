@@ -10,21 +10,26 @@ public class App {
     public static void main(String[] args) {
         while(continuePlaying) {
             gameMessage();
-            int gameEnd = input.nextInt();
-            if(gameEnd == 1){
-                continuePlaying = false;
-                break;
-            } else if(gameEnd == 2){
-                teacher.addStudentInformation();
-            }else if(gameEnd == 3){
-                teacher.updateStudentInformation();
-            }else if(gameEnd == 4){
-                teacher.deleteStudent();
-            }else if(gameEnd == 5){
-                teacher.generateRateStudentInformation();
-            }
+            int commandChoice = input.nextInt();
+            if (isChoice(commandChoice)) break;
             teacher.studentDetails();
         }
+    }
+
+    private static boolean isChoice(int gameEnd) {
+        if(gameEnd == 1){
+            continuePlaying = false;
+            return true;
+        } else if(gameEnd == 2){
+            teacher.addStudentInformation();
+        }else if(gameEnd == 3){
+            teacher.updateStudentInformation();
+        }else if(gameEnd == 4){
+            teacher.deleteStudentInformation();
+        }else if(gameEnd == 5){
+            teacher.generaterateStudentInformation();
+        }
+        return false;
     }
 
     private static void gameMessage() {

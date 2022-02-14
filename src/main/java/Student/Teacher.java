@@ -17,8 +17,8 @@ public class Teacher extends Student {
         showCurrentStudents();
     }
 
-    private void student(String name, StudentDetails studentDetails, Student studentMan) {
-        Student student = new Student(name, studentMan.getAllScores(), studentDetails.studentAverageScore(), studentDetails.getStudentGrade());
+    private void student(String name, StudentDetails studentDetails, Student randomScore) {
+        Student student = new Student(name, randomScore.getAllScores(), studentDetails.studentAverageScore(), studentDetails.getStudentGrade());
         studentArrayList.add(student);
     }
 
@@ -28,7 +28,7 @@ public class Teacher extends Student {
         }
     }
 
-    void generateRateStudentInformation() {
+    void generaterateStudentInformation() {
         student.setName("NAME");
         StudentDetails studentDetails = new StudentDetails();
         student.setScores(studentDetails.getStudentScore());
@@ -40,7 +40,7 @@ public class Teacher extends Student {
         studentArrayList.get(0).setName(name);
     }
 
-    void deleteStudent() {
+    void deleteStudentInformation() {
         studentArrayList.remove(0);
         showCurrentStudents();
     }
