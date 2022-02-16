@@ -28,7 +28,7 @@ public class Teacher extends Student {
         }
     }
 
-    void generaterateStudentInformation() {
+    void generatedStudentInformation() {
         student.setName("NAME");
         StudentDetails studentDetails = new StudentDetails();
         student.setScores(studentDetails.getStudentScore());

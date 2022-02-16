@@ -27,7 +27,7 @@ public class App {
         }else if(gameEnd == 4){
             teacher.deleteStudentInformation();
         }else if(gameEnd == 5){
-            teacher.generaterateStudentInformation();
+            teacher.generatedStudentInformation();
         }
         return false;
     }
