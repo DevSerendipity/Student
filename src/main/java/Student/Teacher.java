@@ -12,12 +12,12 @@ public class Teacher extends Student {
 
     void studentDetails() {
         StudentDetails studentDetails = new StudentDetails();
-        student(student.getName(), studentDetails, student);
-        student("R", studentDetails, student);
+        student(student.getName(), student, studentDetails);
+        student("tom", student,studentDetails);
         showCurrentStudents();
     }
 
-    private void student(String name, StudentDetails studentDetails, Student randomScore) {
+    private void student(String name, Student randomScore, StudentDetails studentDetails) {
         Student student = new Student(name, randomScore.getAllScores(), studentDetails.studentAverageScore(),
                                       studentDetails.getStudentGrade());
         studentArrayList.add(student);

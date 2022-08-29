@@ -7,18 +7,22 @@ public class App {
     private static final Teacher teacher = new Teacher();
     private static boolean continuePlaying = true;
 
+    public Scanner getInput() {
+        return input;
+    }
+
     public static void main(String[] args) {
         while( continuePlaying ) {
             gameMessage();
             int commandChoice = input.nextInt();
-            if ( isChoice(commandChoice) ) {
+            if ( teacherConditions(commandChoice) ) {
                 break;
             }
             teacher.studentDetails();
         }
     }
 
-    private static boolean isChoice(int gameEnd) {
+    private static boolean teacherConditions(int gameEnd) {
         if ( gameEnd == 1 ) {
             continuePlaying = false;
             return true;
@@ -40,9 +44,5 @@ public class App {
         System.out.println("If you want to update student information. Press 3");
         System.out.println("If you want to delete Student. Press 4");
         System.out.println("If you want to generate student information. Press 5");
-    }
-
-    public Scanner getInput() {
-        return input;
     }
 }
