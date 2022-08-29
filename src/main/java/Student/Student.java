@@ -5,19 +5,19 @@ import java.util.Map;
 
 public class Student {
 
-    private String name;
-    private Map<String,Integer> scores;
     private final double studentAverageScore;
     private final double grade;
+    private String name;
+    private Map<String, Integer> scores;
 
-    protected Student(String name , Map<String,Integer> scores, double studentAverageScore,double grade){
+    protected Student(String name, Map<String, Integer> scores, double studentAverageScore, double grade) {
         this.name = name;
         this.scores = scores;
         this.studentAverageScore = studentAverageScore;
         this.grade = grade;
     }
 
-    protected Student(){
+    protected Student() {
         name = "";
         scores = new HashMap<>();
         studentAverageScore = 0.0;
@@ -28,7 +28,7 @@ public class Student {
         return name;
     }
 
-    protected void setName(String name){
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -36,7 +36,7 @@ public class Student {
         return new HashMap<>(scores);
     }
 
-    protected void setScores(Map<String,Integer> scores){
+    protected void setScores(Map<String, Integer> scores) {
         this.scores = scores;
     }
 

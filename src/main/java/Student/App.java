@@ -4,29 +4,31 @@ import java.util.Scanner;
 
 public class App {
     private static final Scanner input = new Scanner(System.in);
-    private static boolean continuePlaying = true;
     private static final Teacher teacher = new Teacher();
+    private static boolean continuePlaying = true;
 
     public static void main(String[] args) {
-        while(continuePlaying) {
+        while( continuePlaying ) {
             gameMessage();
             int commandChoice = input.nextInt();
-            if (isChoice(commandChoice)) break;
+            if ( isChoice(commandChoice) ) {
+                break;
+            }
             teacher.studentDetails();
         }
     }
 
     private static boolean isChoice(int gameEnd) {
-        if(gameEnd == 1){
+        if ( gameEnd == 1 ) {
             continuePlaying = false;
             return true;
-        } else if(gameEnd == 2){
+        } else if ( gameEnd == 2 ) {
             teacher.addStudentInformation();
-        }else if(gameEnd == 3){
+        } else if ( gameEnd == 3 ) {
             teacher.updateStudentInformation();
-        }else if(gameEnd == 4){
+        } else if ( gameEnd == 4 ) {
             teacher.deleteStudentInformation();
-        }else if(gameEnd == 5){
+        } else if ( gameEnd == 5 ) {
             teacher.generatedStudentInformation();
         }
         return false;
@@ -40,7 +42,7 @@ public class App {
         System.out.println("If you want to generate student information. Press 5");
     }
 
-    public  Scanner getInput() {
+    public Scanner getInput() {
         return input;
     }
 }

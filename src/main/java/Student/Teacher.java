@@ -18,14 +18,15 @@ public class Teacher extends Student {
     }
 
     private void student(String name, StudentDetails studentDetails, Student randomScore) {
-        Student student = new Student(name, randomScore.getAllScores(), studentDetails.studentAverageScore(), studentDetails.getStudentGrade());
+        Student student = new Student(name, randomScore.getAllScores(), studentDetails.studentAverageScore(),
+                                      studentDetails.getStudentGrade());
         studentArrayList.add(student);
     }
 
     private void showCurrentStudents() {
-        for (Student s : studentArrayList) {
-            System.out.printf("Student name %s | student scores %s  | student average score %.2f | student grade %.2f \n", s.getName(), s.getAllScores(), s.getStudentAverageScore(), s.getGrade());
-        }
+        studentArrayList.forEach(student -> System.out.printf(
+                "Student name %s | student scores %s  | student average score %.2f | student grade %.2f \n",
+                student.getName(), student.getAllScores(), student.getStudentAverageScore(), student.getGrade()));
     }
 
     void generatedStudentInformation() {
@@ -48,7 +49,7 @@ public class Teacher extends Student {
     void addStudentInformation() {
         System.out.print("Enter student name: ");
         String name = app.getInput().next();
-        for (int i = 0; i < 5; i++) {
+        for ( int i = 0; i < 5; i++ ) {
             setStudentScore(i);
         }
         setStudentData(name);
